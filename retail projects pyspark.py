@@ -1,6 +1,6 @@
 # Databricks notebook source
 dbutils.fs.mount(
-  source = "wasbs://retail@retailproject.blob.core.windows.net",
+  source = "wasbs://retaildata@dashboardstore.blob.core.windows.net",
   mount_point = "/mnt/retail_project",
   extra_configs = {"fs.azure.account.key.retailproject.blob.core.windows.net":"secret access key"})
 
@@ -18,7 +18,7 @@ df_transactions = spark.read.parquet('/mnt/retail_project/bronze/transaction/')
 df_products = spark.read.parquet('/mnt/retail_project/bronze/product/')
 df_stores = spark.read.parquet('/mnt/retail_project/bronze/store/')
 
-df_customers = spark.read.parquet('/mnt/retail_project/bronze/customer/manish040596/azure-data-engineer---multi-source/refs/heads/main/')
+df_customers = spark.read.parquet('/mnt/retail_project/bronze/customer/ashwin/azure-data-engineer---multi-source/refs/heads/main/')
 display(df_customers)
 
 
